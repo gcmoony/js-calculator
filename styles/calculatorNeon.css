@@ -1,0 +1,22 @@
+:root {
+    --main-background: hsl(268, 75%, 9%);
+    --toggle-keypad-background: hsl(268, 71%, 12%);
+    --screen-background: hsl(268, 71%, 12%);
+
+    --key-background-del-reset: hsl(281, 89%, 26%);
+    --key-shadow-del-reset: hsl(285, 91%, 52%);
+
+    --key-background: hsl(268, 47%, 21%);
+    --key-shadow: hsl(290, 70%, 36%);
+
+    --key-background-equal: hsl(176, 100%, 44%);
+    --key-shadow-equal: hsl(177, 92%, 70%);
+
+    --text-dark: hsl(52, 100%, 62%);
+    --text-light: hsl(0, 0%, 100%);
+    --text-weight: 700;
+}
+
+#button-equal {
+    color: hsl(198, 20%, 13%);
+}

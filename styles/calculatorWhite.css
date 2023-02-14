@@ -1,0 +1,22 @@
+:root {
+    --main-background: hsl(0, 0%, 100%);
+    --toggle-keypad-background: hsl(0, 5%, 81%);
+    --screen-background: hsl(0, 0%, 93%);
+
+    --key-background-del-reset: hsl(185, 42%, 37%);
+    --key-shadow-del-reset: hsl(185, 58%, 25%);
+
+    --key-background: hsl(30, 25%, 89%);
+    --key-shadow: hsl(28, 16%, 65%);
+
+    --key-background-equal: hsl(25, 98%, 40%);
+    --key-shadow-equal: hsl(25, 99%, 27%);
+
+    --text-dark: hsl(60, 10%, 19%);
+    --text-light: hsl(0, 0%, 100%);
+    --text-weight: 700;
+}
+
+* :not(#button-reset, #button-equal, #button-del, a) {
+    color: black !important;
+}
