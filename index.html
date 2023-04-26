@@ -19,11 +19,9 @@
     .attribution a { color: hsl(228, 100%, 73%); }
   </style>
   <script rel="script" src="scripts/calculatorFunctions.js" defer></script>
-  <script rel="script" src="script/themeSelect.js" defer></script>
+  <script rel="script" src="scripts/themeSelect.js" defer></script>
   <link rel="stylesheet" href="styles/calculator.css">
-  <!-- <link rel="stylesheet" href="styles/calculatorBlue.css">
-  <link rel="stylesheet" href="styles/calculatorWhite.css"> -->
-  <link rel="stylesheet" href="styles/calculatorNeon.css">
+  <link id="styleTheme" rel="stylesheet" href="styles/calculatorBlue.css">
 </head>
 <body>
   <div id="calculator">
@@ -31,18 +29,21 @@
       <h1 id="calculator-name">calc</h1>
       <div id="calculator-theme-container">
         <form id="theme-selector">
-          <fieldset id="theme-selector-choices">
-            <legend>Theme</legend>
-            <label for="theme1" id="theme1-label">1
-              <input id="theme1" name="theme" type="radio" value="theme1" checked>
-            </label>
-            <label for="theme2" id="theme2-label">2
-              <input id="theme2" name="theme" type="radio" value="theme2">
-            </label>
-            <label for="theme3" id="theme3-label">3
-              <input id="theme3" name="theme" type="radio" value="theme1">
-            </label>
-          </fieldset>
+          <p>Theme</p>
+          <div id="theme-selector-choices">
+            <div class="theme-choice">
+              <label for="theme1" id="theme1-label">1</label>
+              <input id="theme1" class="radio-btn" name="theme" type="radio" value="theme1" checked>
+            </div>
+            <div class="theme-choice">
+              <label for="theme2" id="theme2-label">2</label>
+              <input id="theme2" class="radio-btn" name="theme" type="radio" value="theme2">
+            </div>  
+            <div class="theme-choice">
+              <label for="theme3" id="theme3-label">3</label>
+              <input id="theme3" class="radio-btn" name="theme" type="radio" value="theme1">
+            </div>
+          </div>
         </form>
       </div>
     </header>
