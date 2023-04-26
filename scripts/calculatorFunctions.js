@@ -52,7 +52,7 @@ function calculate(){
             break;
     }
     clearScreen = true;
-    screenInput.value = output.toFixed(5);
+    screenInput.value = output.toFixed(2);
 }
 
 function add(num1, num2){
