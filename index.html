@@ -1,82 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style/calculator.css" />
   <title>Frontend Mentor | Calculator app</title>
+  <script src="./script.js" defer></script>
+  <link rel="stylesheet" href="./style/calculatorBlue.css" />
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { 
-      font-size: 20px; 
-      color: rgb(177, 177, 177);
+    .attribution {
+      font-size: 11px;
       text-align: center;
-      position: relative;
-      bottom: 0;
-      left: 0;
-      right: 0;
     }
-    .attribution a { color: hsl(228, 100%, 73%); }
+
+    .attribution a {
+      color: var(--text-light);
+      text-decoration-color: hsl(228, 45%, 44%);
+    }
   </style>
-  <script rel="script" src="scripts/calculatorFunctions.js" defer></script>
-  <script rel="script" src="script/themeSelect.js" defer></script>
-  <link rel="stylesheet" href="styles/calculator.css">
-  <!-- <link rel="stylesheet" href="styles/calculatorBlue.css">
-  <link rel="stylesheet" href="styles/calculatorWhite.css"> -->
-  <link rel="stylesheet" href="styles/calculatorNeon.css">
 </head>
+
 <body>
-  <div id="calculator">
-    <header id="calculator-header">
-      <h1 id="calculator-name">calc</h1>
-      <div id="calculator-theme-container">
-        <form id="theme-selector">
-          <fieldset id="theme-selector-choices">
-            <legend>Theme</legend>
-            <label for="theme1" id="theme1-label">1
-              <input id="theme1" name="theme" type="radio" value="theme1" checked>
-            </label>
-            <label for="theme2" id="theme2-label">2
-              <input id="theme2" name="theme" type="radio" value="theme2">
-            </label>
-            <label for="theme3" id="theme3-label">3
-              <input id="theme3" name="theme" type="radio" value="theme1">
-            </label>
-          </fieldset>
-        </form>
-      </div>
-    </header>
 
-    <main id="calculator-interface">
-      <input id="calculator-screen" value="0" type="text" disabled>
-      <div id="calculator-inputs">
-        <button id="button-07" class="calculator-button" onclick="updateInput(7)">7</button>
-        <button id="button-08" class="calculator-button" onclick="updateInput(8)">8</button>
-        <button id="button-09" class="calculator-button" onclick="updateInput(9)">9</button>
-        <button id="button-del" class="calculator-button" onclick="deleteItem()">DEL</button>
-        <button id="button-04" class="calculator-button" onclick="updateInput(4)">4</button>
-        <button id="button-05" class="calculator-button" onclick="updateInput(5)">5</button>
-        <button id="button-06" class="calculator-button" onclick="updateInput(6)">6</button>
-        <button id="button-add" class="calculator-button" onclick="setAction('+')">+</button>
-        <button id="button-01" class="calculator-button" onclick="updateInput(1)">1</button>
-        <button id="button-02" class="calculator-button" onclick="updateInput(2)">2</button>
-        <button id="button-03" class="calculator-button" onclick="updateInput(3)">3</button>
-        <button id="button-subtract" class="calculator-button"onclick="setAction('-')">-</button>
-        <button id="button-decimal" class="calculator-button" onclick="updateInput('.')">.</button>
-        <button id="button-00" class="calculator-button" onclick="updateInput(0)">0</button>
-        <button id="button-divide" class="calculator-button" onclick="setAction('/')">/</button>
-        <button id="button-multiply" class="calculator-button" onclick="setAction('*')">x</button>        
-        <button id="button-reset" class="calculator-button large-button" onclick="resetScreen()">RESET</button>
-        <button id="button-equal" class="calculator-button large-button" onclick="calculate()">=</button>
+  <div class="calculator">
+    <div class="calculator-top">
+      <h1>calc</h1>
+      <div>
+        <span class="theme-legend">Theme</span>
+        <div class="calculator-theme">
+          <label class="n1">1</label><input name="theme" value="1" class="b1" type="radio" checked/>
+          <label class="n2">2</label><input name="theme" value="2" class="b2" type="radio" />
+          <label class="n3">3</label><input name="theme" value="3" class="b3" type="radio" />
+          <div class="theme-background"><span class="theme-selection"></span></div>
+        </div>
       </div>
-    </main>
+      
+    </div>
+
+    <div class="calculator-body">
+      <p class="calculator-screen">
+        399,981
+      </p>
+
+      <div class="calculator-buttons">
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="accent upper">del</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>+</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>-</button>
+        <button>.</button>
+        <button>0</button>
+        <button>/</button>
+        <button>x</button>
+        <button class="accent span-2 upper">reset</button>
+        <button class="s-accent span-2">=</button>
+      </div>
+    </div>
   </div>
 
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/GCMoony/">GCMoony</a>.
-  </div>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/GCMoony">GCMoony</a>.
+    </div>
+  </footer>
 </body>
+
 </html>
