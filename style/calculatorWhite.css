@@ -1,5 +1,5 @@
 :root {
-    --main-background: hsl(0, 0%, 100%);
+    --main-background: hsla(0, 0%, 100%, 30%);
     --toggle-keypad-background: hsl(0, 5%, 81%);
     --screen-background: hsl(0, 0%, 93%);
 
@@ -17,6 +17,14 @@
     --text-weight: 700;
 }
 
-* :not(#button-reset, #button-equal, #button-del, a) {
+body {
+    background-color: var(--screen-background);
+}
+
+.calculator-body p {
+    background-color: var(--main-background);
+}
+
+* :not(.span-2, .accent) {
     color: black !important;
 }
