@@ -17,6 +17,6 @@
     --text-weight: 700;
 }
 
-#button-equal {
-    color: hsl(198, 20%, 13%);
+.s-accent {
+    color: hsl(198, 20%, 13%) !important;
 }
