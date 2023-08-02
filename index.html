@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./style/calculator.css" />
   <title>Frontend Mentor | Calculator app</title>
   <script src="./script.js" defer></script>
+  <script src="./calculator.js" defer></script>
   <link id="theme" rel="stylesheet" href="./style/calculatorBlue.css" />
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -44,29 +45,29 @@
     </div>
 
     <div class="calculator-body">
-      <p class="calculator-screen">
+      <p id="calc-output" class="calculator-screen">
         399,981
       </p>
 
       <div class="calculator-buttons">
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
+        <button onclick="c.updateScreen(7)">7</button>
+        <button onclick="c.updateScreen(8)">8</button>
+        <button onclick="c.updateScreen(9)">9</button>
         <button class="accent upper">del</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>+</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>-</button>
+        <button onclick="c.updateScreen(4)">4</button>
+        <button onclick="c.updateScreen(5)">5</button>
+        <button onclick="c.updateScreen(6)">6</button>
+        <button onclick="c.setOperand('+')">+</button>
+        <button onclick="c.updateScreen(1)">1</button>
+        <button onclick="c.updateScreen(2)">2</button>
+        <button onclick="c.updateScreen(3)">3</button>
+        <button onclick="c.setOperand('-')">-</button>
         <button>.</button>
-        <button>0</button>
-        <button>/</button>
-        <button>x</button>
-        <button class="accent span-2 upper">reset</button>
-        <button class="s-accent span-2">=</button>
+        <button onclick="c.updateScreen(0)">0</button>
+        <button onclick="c.setOperand('/')">/</button>
+        <button onclick="c.setOperand('*')">x</button>
+        <button class="accent span-2 upper" onclick="c.reset()">reset</button>
+        <button class="s-accent span-2" onclick="c.calculate()">=</button>
       </div>
     </div>
   </div>
