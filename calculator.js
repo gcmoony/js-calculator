@@ -1,62 +1,63 @@
 class Calculator {
     firstNum = 0;
     secondNum = 0;
-    answer = 31981;
-    mustReset = false;
+    answer = 0;
+    mustReset = true;
     operand;
 
     constructor(calculatorOutputID) {
         this.output = document.getElementById(calculatorOutputID);
     }
 
+    containsDecimal() {
+        return this.output.innerText.includes(".") ? true : false;
+    }
+
     printAnswer() {
-        // console.log(`${this.answer}`);
-        let t = this.answer.toString();
-        let finalStr = "";
-        let counter = 0;
-        for( let i = t.length - 1; i >= 0; i-- ) {
-            if( counter % 3 == 0 && counter >= 3 ) {
-                // console.log(",");
-                finalStr += ",";
-            }
-            // console.log(t[i]);
-            finalStr += t[i];
-            counter++;
-        }
-        // console.log("final", finalStr)
-        let newStr = "";
-        for(let i = finalStr.length - 1; i >= 0; i-- ) {
-            // console.log(finalStr[i])
-            newStr += finalStr[i];
-        }
-        // console.log(newStr);
-        console.log(newStr);
-        this.output.innerText = newStr;
+        // Max decimal length set to 9, probably reasonable
+        this.output.innerText = (this.answer).toPrecision(6);
     }
 
     addVals() {
+        // Adds two numbers
         return this.firstNum + this.secondNum;
     }
 
     subVals() {
+        // Subtracts two numbers
         return this.firstNum - this.secondNum;
     }
 
     multVals() {
+        // Multiplies two numbers
         return this.firstNum * this.secondNum;
     }
 
     divVals() {
+        // Divides two numbers
         return this.firstNum / this.secondNum;
     }
 
     updateScreen(newNum) {
-        if(this.firstNum == 0 && this.secondNum == 0 && this.answer == 31981 || this.mustReset ) {
+        // A default screen reset, so sample text doesn't get added to user input
+        if( this.mustReset ) {
             this.reset()
         }
-        if(this.output.innerText == 0 ) {
-            this.output.innerText = newNum;
+
+        // Handles adding a decimal to the input
+        if( newNum == "." ) {
+            if(!this.containsDecimal()) {
+                this.output.innerText += newNum;
+            }
+            return;
         }
+
+        // Sets value to user input if screen still reads '0'
+        if(this.output.innerText == "0" ) {
+                this.output.innerText = newNum;            
+        }
+
+        // Appends the new user input to the screen's value
         else {
             this.output.innerText += newNum;
         }
@@ -64,7 +65,7 @@ class Calculator {
     }
 
     clearScreen() {
-        this.output.innerText = 0;
+        this.output.innerText = "0";
     }
 
     reset() {
@@ -74,6 +75,14 @@ class Calculator {
         this.operand = null;
         this.mustReset = false;
         this.clearScreen();
+    }
+
+    deleteLast() {
+        let newStr = this.output.innerText.substring(0, this.output.innerText.length - 1);
+        if (newStr.length == 0) {
+            newStr = "0";
+        }
+        this.output.innerText = newStr;
     }
 
     setFirst() {
@@ -103,7 +112,7 @@ class Calculator {
                 this.answer = this.divVals();
                 break;
         }
-        this.mustReset = true;
+        // this.mustReset = true;
         this.printAnswer();
     }
 
@@ -112,23 +121,6 @@ class Calculator {
         this.clearScreen();
         this.operand = operator;
     }
-
-    // setOperand(operator) {
-    //     switch(operator) {
-    //         case "+":
-    //             this.addVals;
-    //             break;
-    //         case "-":
-    //             this.subVals;
-    //             break;
-    //         case "*":
-    //             this.multVals;
-    //             break;
-    //         case "/":
-    //             this.divVals;
-    //             break;
-    //     }
-    // }
 
 
 }
