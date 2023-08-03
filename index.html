@@ -12,7 +12,6 @@
   <script src="./themeSelect.js" defer></script>
   <script src="./calculator.js" defer></script>
   <link id="theme" rel="stylesheet" href="./style/calculatorBlue.css" />
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution {
       font-size: 11px;
@@ -53,7 +52,7 @@
         <button onclick="c.updateScreen(7)">7</button>
         <button onclick="c.updateScreen(8)">8</button>
         <button onclick="c.updateScreen(9)">9</button>
-        <button class="accent upper">del</button>
+        <button class="accent upper" onclick="c.deleteLast()">del</button>
         <button onclick="c.updateScreen(4)">4</button>
         <button onclick="c.updateScreen(5)">5</button>
         <button onclick="c.updateScreen(6)">6</button>
@@ -62,7 +61,7 @@
         <button onclick="c.updateScreen(2)">2</button>
         <button onclick="c.updateScreen(3)">3</button>
         <button onclick="c.setOperand('-')">-</button>
-        <button>.</button>
+        <button onclick="c.updateScreen('.')">.</button>
         <button onclick="c.updateScreen(0)">0</button>
         <button onclick="c.setOperand('/')">/</button>
         <button onclick="c.setOperand('*')">x</button>
