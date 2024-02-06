@@ -3,7 +3,7 @@
 ![Design preview for the Calculator app coding challenge](./design/desktop-preview.jpg)
 
 
-[Check out the live demo here!](https://gcmunoz.com/js-calculator/)
+[Check out the live demo here!](https://gcmoony.github.io/js-calculator/)
 
 ## Welcome! 👋
 
